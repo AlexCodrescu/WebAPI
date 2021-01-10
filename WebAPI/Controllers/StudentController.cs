@@ -7,14 +7,18 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using System.Data.SqlClient;
 using System.Data;
+using Microsoft.AspNetCore.Authorization;
 
+//using WebAPI.Handlers;
 
 namespace WebAPI.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class StudentController : ControllerBase
     {
+ 
         private readonly IConfiguration _configuration;
 
         public StudentController(IConfiguration configuration)

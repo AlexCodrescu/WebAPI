@@ -10,6 +10,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Serialization;
+using Microsoft.AspNetCore.Authentication;
+//using WebAPI.Handlers;
 
 namespace WebAPI
 {
@@ -37,6 +39,9 @@ namespace WebAPI
                 options.SerializerSettings.ReferenceLoopHandling=Newtonsoft.Json.ReferenceLoopHandling.Ignore)
                 .AddNewtonsoftJson(options=> options.SerializerSettings.ContractResolver =new DefaultContractResolver()
                 );
+
+//            services.AddAuthentication("BasicAuthentication")
+ //               .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
 
             services.AddControllers();
 
